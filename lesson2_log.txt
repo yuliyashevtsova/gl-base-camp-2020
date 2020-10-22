@@ -1,0 +1,197 @@
+(base) Yuliias-MacBook-Air:gl-base-camp-2020 yuliiashevtsova$ git log
+commit 1e1358dd1b6748f22aba4acad07354e3d10436d6 (HEAD -> main, origin/main, origin/HEAD)
+Author: yuliyashevtsova <73187109+yuliyashevtsova@users.noreply.github.com>
+Date:   Wed Oct 21 16:35:48 2020 +0300
+
+    Initial commit
+(base) Yuliias-MacBook-Air:gl-base-camp-2020 yuliiashevtsova$ git log --oneline --decorate --graph --all
+* 1e1358d (HEAD -> main, origin/main, origin/HEAD) Initial commit
+(base) Yuliias-MacBook-Air:gl-base-camp-2020 yuliiashevtsova$ git branch new_branch
+(base) Yuliias-MacBook-Air:gl-base-camp-2020 yuliiashevtsova$ git chechout -b new_branch2
+git: 'chechout' is not a git command. See 'git --help'.
+
+The most similar command is
+	checkout
+(base) Yuliias-MacBook-Air:gl-base-camp-2020 yuliiashevtsova$ git checkout -b new_branch2
+Switched to a new branch 'new_branch2'
+(base) Yuliias-MacBook-Air:gl-base-camp-2020 yuliiashevtsova$ git log
+commit 1e1358dd1b6748f22aba4acad07354e3d10436d6 (HEAD -> new_branch2, origin/main, origin/HEAD, new_branch, main)
+Author: yuliyashevtsova <73187109+yuliyashevtsova@users.noreply.github.com>
+Date:   Wed Oct 21 16:35:48 2020 +0300
+
+    Initial commit
+(base) Yuliias-MacBook-Air:gl-base-camp-2020 yuliiashevtsova$ git log --oneline --decorate --graph --all
+* 1e1358d (HEAD -> new_branch2, origin/main, origin/HEAD, new_branch, main) Initial commit
+(base) Yuliias-MacBook-Air:gl-base-camp-2020 yuliiashevtsova$ git log --oneline --decorate --graph --all
+* 1e1358d (HEAD -> new_branch2, origin/main, origin/HEAD, new_branch, main) Initial commit
+(base) Yuliias-MacBook-Air:gl-base-camp-2020 yuliiashevtsova$ git checkout new_branch
+Switched to branch 'new_branch'
+(base) Yuliias-MacBook-Air:gl-base-camp-2020 yuliiashevtsova$ git log --oneline --decorate --graph --all
+* 1e1358d (HEAD -> new_branch, origin/main, origin/HEAD, new_branch2, main) Initial commit
+(base) Yuliias-MacBook-Air:gl-base-camp-2020 yuliiashevtsova$ ls
+README.md
+(base) Yuliias-MacBook-Air:gl-base-camp-2020 yuliiashevtsova$ nano README.md
+(base) Yuliias-MacBook-Air:gl-base-camp-2020 yuliiashevtsova$ git status
+On branch new_branch
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+(base) Yuliias-MacBook-Air:gl-base-camp-2020 yuliiashevtsova$ git add README.md
+(base) Yuliias-MacBook-Air:gl-base-camp-2020 yuliiashevtsova$ git commit
+[new_branch df09f41] write a new commit
+ Committer: Yuliia Shevtsova <yuliiashevtsova@Yuliias-MacBook-Air.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+(base) Yuliias-MacBook-Air:gl-base-camp-2020 yuliiashevtsova$ git log --oneline --decorate --graph --all
+* df09f41 (HEAD -> new_branch) write a new commit
+* 1e1358d (origin/main, origin/HEAD, new_branch2, main) Initial commit
+(base) Yuliias-MacBook-Air:gl-base-camp-2020 yuliiashevtsova$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+(base) Yuliias-MacBook-Air:gl-base-camp-2020 yuliiashevtsova$ git log --oneline --decorate --graph --all
+* df09f41 (new_branch) write a new commit
+* 1e1358d (HEAD -> main, origin/main, origin/HEAD, new_branch2) Initial commit
+(base) Yuliias-MacBook-Air:gl-base-camp-2020 yuliiashevtsova$ git checkout - b uss_123_create_tests
+error: pathspec 'b' did not match any file(s) known to git
+error: pathspec 'uss_123_create_tests' did not match any file(s) known to git
+(base) Yuliias-MacBook-Air:gl-base-camp-2020 yuliiashevtsova$ ls
+README.md
+(base) Yuliias-MacBook-Air:gl-base-camp-2020 yuliiashevtsova$ git log --oneline --decorate --graph --all
+* df09f41 (new_branch) write a new commit
+* 1e1358d (HEAD -> main, origin/main, origin/HEAD, new_branch2) Initial commit
+(base) Yuliias-MacBook-Air:gl-base-camp-2020 yuliiashevtsova$ git checkout - b uss_123_create_tests
+error: pathspec 'b' did not match any file(s) known to git
+error: pathspec 'uss_123_create_tests' did not match any file(s) known to git
+(base) Yuliias-MacBook-Air:gl-base-camp-2020 yuliiashevtsova$ git checkout -b uss_123_create_tests
+Switched to a new branch 'uss_123_create_tests'
+(base) Yuliias-MacBook-Air:gl-base-camp-2020 yuliiashevtsova$ ls
+README.md
+(base) Yuliias-MacBook-Air:gl-base-camp-2020 yuliiashevtsova$ nano README.md
+(base) Yuliias-MacBook-Air:gl-base-camp-2020 yuliiashevtsova$ git add README.md
+(base) Yuliias-MacBook-Air:gl-base-camp-2020 yuliiashevtsova$ git commit -m "modified readme"
+[uss_123_create_tests ce5a4b0] modified readme
+ Committer: Yuliia Shevtsova <yuliiashevtsova@Yuliias-MacBook-Air.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+(base) Yuliias-MacBook-Air:gl-base-camp-2020 yuliiashevtsova$ git log --oneline --decorate --graph --all
+* ce5a4b0 (HEAD -> uss_123_create_tests) modified readme
+| * df09f41 (new_branch) write a new commit
+|/  
+* 1e1358d (origin/main, origin/HEAD, new_branch2, main) Initial commit
+(base) Yuliias-MacBook-Air:gl-base-camp-2020 yuliiashevtsova$ git checkout new_branch
+Switched to branch 'new_branch'
+(base) Yuliias-MacBook-Air:gl-base-camp-2020 yuliiashevtsova$ git log --oneline --decorate --graph --all
+* ce5a4b0 (uss_123_create_tests) modified readme
+| * df09f41 (HEAD -> new_branch) write a new commit
+|/  
+* 1e1358d (origin/main, origin/HEAD, new_branch2, main) Initial commit
+(base) Yuliias-MacBook-Air:gl-base-camp-2020 yuliiashevtsova$ git merge uss_123_create_tests
+Auto-merging README.md
+CONFLICT (content): Merge conflict in README.md
+Automatic merge failed; fix conflicts and then commit the result.
+(base) Yuliias-MacBook-Air:gl-base-camp-2020 yuliiashevtsova$ git checkut main
+git: 'checkut' is not a git command. See 'git --help'.
+
+The most similar command is
+	checkout
+(base) Yuliias-MacBook-Air:gl-base-camp-2020 yuliiashevtsova$ git checkout main
+README.md: needs merge
+error: you need to resolve your current index first
+(base) Yuliias-MacBook-Air:gl-base-camp-2020 yuliiashevtsova$ git log --oneline --decorate --graph --all
+* ce5a4b0 (uss_123_create_tests) modified readme
+| * df09f41 (HEAD -> new_branch) write a new commit
+|/  
+* 1e1358d (origin/main, origin/HEAD, new_branch2, main) Initial commit
+(base) Yuliias-MacBook-Air:gl-base-camp-2020 yuliiashevtsova$ git status
+On branch new_branch
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+(base) Yuliias-MacBook-Air:gl-base-camp-2020 yuliiashevtsova$ git checkout new_branch
+README.md: needs merge
+error: you need to resolve your current index first
+(base) Yuliias-MacBook-Air:gl-base-camp-2020 yuliiashevtsova$ git log --oneline --decorate --graph --all
+* ce5a4b0 (uss_123_create_tests) modified readme
+| * df09f41 (HEAD -> new_branch) write a new commit
+|/  
+* 1e1358d (origin/main, origin/HEAD, new_branch2, main) Initial commit
+(base) Yuliias-MacBook-Air:gl-base-camp-2020 yuliiashevtsova$ git merge uss_123_create_tests
+error: Merging is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+(base) Yuliias-MacBook-Air:gl-base-camp-2020 yuliiashevtsova$ cat README.md
+# gl-base-camp-2020
+<<<<<<< HEAD
+hjhj
+=======
+hjh
+>>>>>>> uss_123_create_tests
+(base) Yuliias-MacBook-Air:gl-base-camp-2020 yuliiashevtsova$ nano README.md
+(base) Yuliias-MacBook-Air:gl-base-camp-2020 yuliiashevtsova$ git add README.md
+(base) Yuliias-MacBook-Air:gl-base-camp-2020 yuliiashevtsova$ git commit -m "fix conflict"
+[new_branch 6a7bcf7] fix conflict
+ Committer: Yuliia Shevtsova <yuliiashevtsova@Yuliias-MacBook-Air.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+(base) Yuliias-MacBook-Air:gl-base-camp-2020 yuliiashevtsova$ git status
+On branch new_branch
+nothing to commit, working tree clean
+(base) Yuliias-MacBook-Air:gl-base-camp-2020 yuliiashevtsova$ git log --oneline --decorate --graph --all
+*   6a7bcf7 (HEAD -> new_branch) fix conflict
+|\  
+| * ce5a4b0 (uss_123_create_tests) modified readme
+* | df09f41 write a new commit
+|/  
+* 1e1358d (origin/main, origin/HEAD, new_branch2, main) Initial commit
+(base) Yuliias-MacBook-Air:gl-base-camp-2020 yuliiashevtsova$ git log --oneline --decorate --graph --all
+*   6a7bcf7 (HEAD -> new_branch) fix conflict
+|\  
+| * ce5a4b0 (uss_123_create_tests) modified readme
+* | df09f41 write a new commit
+|/  
+* 1e1358d (origin/main, origin/HEAD, new_branch2, main) Initial commit
+(base) Yuliias-MacBook-Air:gl-base-camp-2020 yuliiashevtsova$ touch lesson2_log
+(base) Yuliias-MacBook-Air:gl-base-camp-2020 yuliiashevtsova$ ls
+README.md	lesson2_log
+(base) Yuliias-MacBook-Air:gl-base-camp-2020 yuliiashevtsova$ touch lesson2_log.txt
+(base) Yuliias-MacBook-Air:gl-base-camp-2020 yuliiashevtsova$ nano lesson2_log.txt
+(base) Yuliias-MacBook-Air:gl-base-camp-2020 yuliiashevtsova$ 
