@@ -1,0 +1,108 @@
+====Task1==== Move file from untracked to commit and the whole way back. Note: Do not skip any stage.
+
+yuliiashevtsova@Yuliias-MacBook-Air gl-base-camp-2020 % touch untracked.txt
+yuliiashevtsova@Yuliias-MacBook-Air gl-base-camp-2020 % git status
+On branch HW1_task2_branch
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	HW1_git.txt
+	untracked.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+yuliiashevtsova@Yuliias-MacBook-Air gl-base-camp-2020 % git add untracked.txt
+yuliiashevtsova@Yuliias-MacBook-Air gl-base-camp-2020 % git status
+On branch HW1_task2_branch
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   untracked.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	HW1_git.txt
+
+yuliiashevtsova@Yuliias-MacBook-Air gl-base-camp-2020 % git commit -m "add untacked.txt file"
+[HW1_task2_branch eb86037] add untacked.txt file
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 untracked.txt
+yuliiashevtsova@Yuliias-MacBook-Air gl-base-camp-2020 % git reset --soft HEAD~1
+yuliiashevtsova@Yuliias-MacBook-Air gl-base-camp-2020 % git status
+On branch HW1_task2_branch
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   untracked.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	HW1_git.txt
+
+yuliiashevtsova@Yuliias-MacBook-Air gl-base-camp-2020 % git restore --staged untracked.txt
+yuliiashevtsova@Yuliias-MacBook-Air gl-base-camp-2020 % git status
+On branch HW1_task2_branch
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	HW1_git.txt
+	untracked.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+yuliiashevtsova@Yuliias-MacBook-Air gl-base-camp-2020 % 
+
+====Task2==== Create a branch from initial commit of master branch
+
+yuliiashevtsova@Yuliias-MacBook-Air gl-base-camp-2020 % git checkout 1e1358dd1b6748f22aba4acad07354e3d10436d6
+Note: switching to '1e1358dd1b6748f22aba4acad07354e3d10436d6'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 1e1358d Initial commit
+yuliiashevtsova@Yuliias-MacBook-Air gl-base-camp-2020 % git switch -c HW1_task2_branch
+Switched to a new branch 'HW1_task2_branch'
+yuliiashevtsova@Yuliias-MacBook-Air gl-base-camp-2020 %
+
+
+====Task3==== Remove file from git repository only(leave it on file system)
+
+yuliiashevtsova@Yuliias-MacBook-Air gl-base-camp-2020 % git checkout HW1_task2_branch
+Switched to branch 'HW1_task2_branch'
+yuliiashevtsova@Yuliias-MacBook-Air gl-base-camp-2020 % ls
+HW1_git.txt	README.md	untracked.txt
+yuliiashevtsova@Yuliias-MacBook-Air gl-base-camp-2020 % git status
+On branch HW1_task2_branch
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	HW1_git.txt
+	untracked.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+yuliiashevtsova@Yuliias-MacBook-Air gl-base-camp-2020 % git add untracked.txt
+yuliiashevtsova@Yuliias-MacBook-Air gl-base-camp-2020 % git commit -m "add untracked file"
+[HW1_task2_branch 10ffdf8] add untracked file
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 untracked.txt
+yuliiashevtsova@Yuliias-MacBook-Air gl-base-camp-2020 % git rm --cached untracked.txt
+rm 'untracked.txt'
+yuliiashevtsova@Yuliias-MacBook-Air gl-base-camp-2020 % git commit -m "remove untracked.txt file"
+[HW1_task2_branch f62fa3a] remove untracked.txt file
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ delete mode 100644 untracked.txt
+yuliiashevtsova@Yuliias-MacBook-Air gl-base-camp-2020 % git status
+On branch HW1_task2_branch
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	HW1_git.txt
+	untracked.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+yuliiashevtsova@Yuliias-MacBook-Air gl-base-camp-2020 % 
