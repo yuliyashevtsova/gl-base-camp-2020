@@ -50,3 +50,6 @@ def test_it_logins_user():
     user_details = {"email": "eve.holt@reqres.in", "password": "cityslicka"}
     response = ReqresApiClient.login(user_details)
     assert response == {"token": "QpwL5tke4Pnpja7X4"}
+    
+    
+    
