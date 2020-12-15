@@ -1,0 +1,77 @@
+====Task 1==== Create path ~/f1/f2/f3/f4/f5/f6; Create and fill in text file in f1 folder; Copy it to f6 folder; Navigate to Home folder; Find copied file and remove it 
+
+yuliiashevtsova@Yuliias-MacBook-Air ~ % mkdir -p f1/f2/f3/f4/f5/f6
+yuliiashevtsova@Yuliias-MacBook-Air ~ % nano f1/f1.txt
+yuliiashevtsova@Yuliias-MacBook-Air ~ % cp f1/f1.txt f1/f2/f3/f4/f5/f6
+yuliiashevtsova@Yuliias-MacBook-Air ~ % find ~ -iname f1.txt
+/Users/yuliiashevtsova/f1/f1.txt
+/Users/yuliiashevtsova/f1/f2/f3/f4/f5/f6/f1.txt
+yuliiashevtsova@Yuliias-MacBook-Air ~ % rm f1/f2/f3/f4/f5/f6/f1.txt
+
+====Task 2==== Redirect errors only output into separate file
+
+yuliiashevtsova@Yuliias-MacBook-Air test % ls qqq 2>strerr.txt
+yuliiashevtsova@Yuliias-MacBook-Air test % cat strerr.txt
+ls: qqq: No such file or directory
+yuliiashevtsova@Yuliias-MacBook-Air test % cat qqq 2>>strerr.txt
+yuliiashevtsova@Yuliias-MacBook-Air test % cat strerr.txt       
+ls: qqq: No such file or directory
+cat: qqq: No such file or directory
+yuliiashevtsova@Yuliias-MacBook-Air test % 
+
+====Task 3==== Redirect error and standart outputs into separate file
+
+yuliiashevtsova@Yuliias-MacBook-Air test % cat pwd.sh qqq > r1.txt 2>&1
+yuliiashevtsova@Yuliias-MacBook-Air test % cat r1.txt
+#!/bin/sh
+
+#this program returns current folder
+
+pwd
+cat: qqq: No such file or directory
+yuliiashevtsova@Yuliias-MacBook-Air test % 
+
+====Task 4==== Create file, change owner to root. Add permissions to execute file
+
+yuliiashevtsova@Yuliias-MacBook-Air test % touch f2.txt
+yuliiashevtsova@Yuliias-MacBook-Air test % sudo chown root f2.txt
+yuliiashevtsova@Yuliias-MacBook-Air test % ls -la
+total 24
+drwxr-xr-x   7 yuliiashevtsova  staff   224 Oct 31 16:43 .
+drwxr-xr-x+ 33 yuliiashevtsova  staff  1056 Oct 31 15:00 ..
+-rw-r--r--   1 yuliiashevtsova  staff   136 Oct 29 15:25 .py
+-rw-r--r--   1 root             staff     0 Oct 31 16:43 f2.txt
+-rwxr-xr-x   1 yuliiashevtsova  staff    53 Oct 29 15:34 pwd.sh
+drwxr-xr-x   3 yuliiashevtsova  staff    96 Oct 29 17:45 selenium
+-rw-r--r--   1 yuliiashevtsova  staff    71 Oct 31 14:42 strerr.txt
+yuliiashevtsova@Yuliias-MacBook-Air test % sudo chmod +x f2.txt
+yuliiashevtsova@Yuliias-MacBook-Air test % ls -la
+total 24
+drwxr-xr-x   7 yuliiashevtsova  staff   224 Oct 31 16:43 .
+drwxr-xr-x+ 33 yuliiashevtsova  staff  1056 Oct 31 15:00 ..
+-rw-r--r--   1 yuliiashevtsova  staff   136 Oct 29 15:25 .py
+-rwxr-xr-x   1 root             staff     0 Oct 31 16:43 f2.txt
+-rwxr-xr-x   1 yuliiashevtsova  staff    53 Oct 29 15:34 pwd.sh
+drwxr-xr-x   3 yuliiashevtsova  staff    96 Oct 29 17:45 selenium
+-rw-r--r--   1 yuliiashevtsova  staff    71 Oct 31 14:42 strerr.txt
+yuliiashevtsova@Yuliias-MacBook-Air test % 
+
+====Task 5==== make cmd2 executes only if cmd1 fails
+
+yuliiashevtsova@Yuliias-MacBook-Air test % cat qqq || echo "cmd1 is not successful"
+cat: qqq: No such file or directory
+cmd1 is not successful
+yuliiashevtsova@Yuliias-MacBook-Air test % 
+
+====Task 6==== make cmd2 executes only if cmd1 successful
+
+yuliiashevtsova@Yuliias-MacBook-Air ~ % cd test && echo "you are currently in test directory"
+you are currently in test directory
+yuliiashevtsova@Yuliias-MacBook-Air test % 
+
+====Task 7==== Create and execute sh file that prints current folder. NOTE: Do not use any text redactor
+
+yuliiashevtsova@Yuliias-MacBook-Air ~ % echo "pwd" > pwd.sh
+yuliiashevtsova@Yuliias-MacBook-Air ~ % bash pwd.sh
+/Users/yuliiashevtsova
+yuliiashevtsova@Yuliias-MacBook-Air ~ % 
